@@ -10,10 +10,9 @@ efficient comprehension.
 
 * Update config.yaml
 * Update params.yaml
-* Update entity
+* Update entity (src/entity)
 * Update configuration manager (src/config)
-* Update components
-* Update pipeline
-* Update main.py
+* Update components (src/components)
+* Update pipeline (src/pipeline)
+* Update main.py 
 * Update app.py
-
