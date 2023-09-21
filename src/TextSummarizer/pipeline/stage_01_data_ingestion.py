@@ -2,8 +2,6 @@
 from TextSummarizer.components.data_ingestion import DataIngestion
 from TextSummarizer.config.configuration import ConfigurationManager
 
-STAGE_NAME = "Data Ingestion"
-
 
 class DataIngestionTrainingPipeline:
     def __init__(self):

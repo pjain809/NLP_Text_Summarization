@@ -16,11 +16,10 @@ class DataIngestion:
         """
         Downloads the specified file as in `config.yaml` and saves at the `local_data_file` path.
         """
-
         if not os.path.exists(self.config.local_data_file):
-            _, _ = request.urlretrieve(url=self.config.source_URL,
-                                       filename=self.config.local_data_file)
-            logger.info(f"Input data has been downloaded and saved at \n"
+            request.urlretrieve(url=self.config.source_URL,
+                                filename=self.config.local_data_file)
+            logger.info(f"Input data has been downloaded at \n"
                         f"Path: {self.config.local_data_file} \n"
                         f"Size: {get_size(Path(self.config.local_data_file))}")
         else:
@@ -40,4 +39,3 @@ class DataIngestion:
 
         logger.info(f"Input data has been extracted at \n"
                     f"Path: {self.config.unzip_dir} \n")
-
