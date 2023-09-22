@@ -22,6 +22,11 @@ class DataTransformation:
                 "labels": target_encodings["input_ids"]}
 
     def convert(self):
-        dataset_samsum = load_from_disk(str(self.config.data_path))
-        dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched=True)
-        dataset_samsum_pt.save_to_disk(os.path.join(self.config.root_dir, "samsum_dataset"))
+        if os.path.exists(os.path.join("artifacts", "data_transformation", "samsum_dataset")):
+            logger.info(f"Transformed data already available at \n"
+                        f"Path: {os.path.join('artifacts', 'data_transformation', 'samsum_dataset')}")
+            return
+        else:
+            dataset_samsum = load_from_disk(str(self.config.data_path))
+            dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched=True)
+            dataset_samsum_pt.save_to_disk(os.path.join(self.config.root_dir, "samsum_dataset"))
