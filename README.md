@@ -1,9 +1,7 @@
 
 ### NLP Text Summarization
 
-This project excels at condensing extensive English text 
-into concise, easily digestible summaries, promoting 
-efficient comprehension.
+Leveraging AutoTokenizer and AutoModelForSeq2SeqLM, we emulate a generative AI's text summarization capabilities. Trained on english language conversational dataset, this model offers efficient summarization through a user-friendly UI hosted on FastAPI and uvicorn. Leveraging AI-driven summarization, it improves diverse comprehension.
 <br>
 
 ### Project workflows :
